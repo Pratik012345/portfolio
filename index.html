@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- EDIT: your name + short description (browser tab and Google) -->
+<title>Pratik Bherwani | Portfolio</title>
+<meta name="description" content="Portfolio of Pratik Bherwani, an MBA Tech (Data Science) student from Mumbai.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏯</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;600&family=Shippori+Mincho:wght@600;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --night:#0d0a14;     /* castle void */
+  --wood:#2a1a14;      /* dark timber */
+  --lantern:#f2a541;   /* lantern glow, main accent */
+  --blood:#b3202a;     /* demon red */
+  --haori:#2f6b4f;     /* checkered green */
+  --wisteria:#9b7fd1;  /* wisteria purple */
+  --paper:#efe4cf;     /* shoji paper text */
+  --muted:#b8aa95;
+  --display:"Shippori Mincho","Hiragino Mincho ProN",Georgia,serif;
+  --body:"Noto Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:84px}
+body{margin:0;background:var(--night);color:var(--paper);font-family:var(--body);font-size:1.0625rem;line-height:1.65}
+#castle{position:fixed;inset:0;width:100%;height:100%;z-index:0;pointer-events:none}
+.veil{position:fixed;inset:0;z-index:0;pointer-events:none;background:radial-gradient(ellipse at 50% 30%,rgba(13,10,20,.3),rgba(13,10,20,.78) 80%)}
+nav,header,main,footer{position:relative;z-index:1}
+a{color:var(--lantern)}
+:focus-visible{outline:3px solid var(--lantern);outline-offset:3px}
+h1,h2,h3{font-family:var(--display);line-height:1.1;margin:0}
+h2{font-size:clamp(2rem,6vw,3rem);font-weight:800;margin-bottom:.5rem}
+.wrap{max-width:960px;margin:0 auto;padding:0 20px}
+section{padding:72px 0}
+.lead{color:var(--muted);max-width:60ch;margin:0 0 2rem}
+
+/* haori checker pattern, used as a divider */
+.checker{height:14px;background:repeating-conic-gradient(var(--haori) 0 25%,var(--night) 0 50%) 0 0/28px 28px}
+
+/* panels look like shoji screens: dark paper, wooden frame */
+.panel{background:rgba(26,18,22,.88);border:2px solid var(--lantern);border-radius:3px;box-shadow:0 0 0 5px var(--wood),0 0 28px rgba(242,165,65,.18)}
+
+/* ---------- nav ---------- */
+nav{position:sticky;top:0;z-index:10;background:rgba(13,10,20,.94);border-bottom:2px solid var(--lantern)}
+nav .wrap{display:flex;flex-wrap:wrap;gap:6px 20px;align-items:center;justify-content:space-between;padding-top:8px;padding-bottom:8px}
+.logo{font-family:var(--display);font-weight:800;font-size:1.3rem;color:var(--paper);text-decoration:none}
+nav ul{display:flex;gap:14px;list-style:none;margin:0;padding:0;flex-wrap:wrap}
+nav ul a{color:var(--paper);text-decoration:none;font-weight:500;font-size:.95rem}
+nav ul a:hover{color:var(--lantern)}
+.floor{flex:1 1 100%;display:flex;align-items:center;gap:10px;font-family:var(--display);font-weight:600;font-size:.9rem;color:var(--lantern)}
+.floor .track{flex:1;height:8px;background:var(--wood);transform:skewX(-20deg);overflow:hidden}
+.floor .fill{height:100%;width:0;background:var(--blood)}
+@media(min-width:760px){.floor{flex:0 1 260px}}
+
+/* ---------- hero ---------- */
+.hero{padding:88px 0 104px;text-align:center;position:relative}
+.kanji{position:absolute;right:max(12px,calc(50% - 480px));top:56px;writing-mode:vertical-rl;font-family:var(--display);font-weight:800;font-size:clamp(1.6rem,5vw,3rem);color:var(--blood);opacity:.9;letter-spacing:.2em}
+.hero .tag{font-family:var(--display);font-size:1.2rem;color:var(--lantern);margin-bottom:12px}
+.jp{font-family:var(--display);font-weight:800;font-size:clamp(1.6rem,6vw,2.6rem);color:var(--lantern);letter-spacing:.12em;margin:0 0 6px}
+.hero h1{font-size:clamp(3rem,13vw,7rem);font-weight:800;margin:0 0 16px;text-shadow:0 0 30px rgba(242,165,65,.35),3px 3px 0 var(--blood)}
+.hero .tag,.hero p,.jp{text-shadow:0 2px 12px #000}
+.hero p{font-size:1.2rem;max-width:44ch;margin:0 auto 2rem}
+.btn{display:inline-block;padding:12px 26px;border-radius:3px;font-family:var(--display);font-weight:800;font-size:1.1rem;text-decoration:none;background:var(--lantern);color:var(--night);border:2px solid var(--lantern)}
+.btn.alt{background:rgba(13,10,20,.7);color:var(--lantern)}
+.btn:hover{background:var(--blood);border-color:var(--blood);color:var(--paper)}
+.btns{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
+
+/* ---------- about ---------- */
+.sheet{display:grid;gap:32px;grid-template-columns:1fr}
+@media(min-width:760px){.sheet{grid-template-columns:1.4fr 1fr}}
+.sheet p{margin:0 0 1rem;max-width:62ch}
+.about-text{padding:24px}
+.cares{margin:0 0 1rem;padding-left:1.2rem;max-width:62ch}
+.cares li{margin-bottom:.5rem}
+.char{padding:20px}
+.char img{width:100%;aspect-ratio:1/1;object-fit:cover;border:2px solid var(--lantern);border-radius:3px;background:var(--wood);margin-bottom:14px;display:block}
+.char dl{margin:0;display:grid;grid-template-columns:auto 1fr;gap:6px 14px}
+.char dt{color:var(--lantern);font-family:var(--display);font-weight:600}
+.char dd{margin:0}
+
+/* ---------- missions ---------- */
+.missions{display:grid;gap:22px}
+@media(min-width:760px){.missions{grid-template-columns:1fr 1fr}}
+.mission{padding:22px;display:flex;flex-direction:column;gap:10px}
+.mission h3{font-size:1.6rem;font-weight:800}
+.mission p{margin:0;color:var(--muted);flex:1}
+.row{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}
+.status{font-family:var(--display);font-weight:800;padding:2px 14px;background:var(--haori);color:var(--paper);transform:skewX(-12deg)}
+.status.live{background:var(--blood)}
+.stack{display:flex;flex-wrap:wrap;gap:6px;list-style:none;margin:0;padding:0}
+.stack li{font-size:.85rem;font-weight:500;padding:2px 10px;border:1px solid var(--wisteria);border-radius:999px;color:var(--paper)}
+.reward{font-family:var(--display);font-weight:600;color:var(--lantern)}
+
+/* ---------- breathing forms (skills) ---------- */
+.forms{display:grid;gap:18px;padding:24px}
+.form{display:grid;grid-template-columns:1fr;gap:6px}
+@media(min-width:600px){.form{grid-template-columns:210px 1fr}}
+.form label{font-family:var(--display);font-weight:600;font-size:1.15rem}
+.bar{display:flex;gap:5px;height:16px}
+.bar i{flex:1;background:rgba(239,228,207,.12);transform:skewX(-25deg)}
+.bar i.on{background:var(--lantern);box-shadow:0 0 8px rgba(242,165,65,.6)}
+.form small{color:var(--muted);grid-column:1/-1}
+
+/* ---------- tools (interests) ---------- */
+.inv{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:14px;list-style:none;margin:0;padding:0}
+.inv li{padding:14px;border:2px solid var(--wisteria);background:rgba(26,18,22,.88);border-radius:3px;font-weight:500}
+.inv li span{display:block;font-size:1.8rem;line-height:1.2}
+
+/* ---------- contact ---------- */
+.contact{text-align:center}
+.contact .panel{padding:clamp(24px,5vw,48px)}
+.contact .lead{margin-left:auto;margin-right:auto}
+.links{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;list-style:none;padding:0;margin:0}
+footer{text-align:center;padding:24px 20px;font-size:.9rem;color:var(--muted);background:rgba(13,10,20,.85)}
+
+/* ---------- toast ---------- */
+#toast{position:fixed;left:50%;bottom:20px;transform:translate(-50%,160%);z-index:20;background:var(--night);border:2px solid var(--lantern);padding:12px 18px;font-family:var(--display);max-width:92vw;transition:transform .35s}
+#toast.show{transform:translate(-50%,0)}
+#toast b{color:var(--lantern)}
+
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}#toast{transition:none}}
+</style>
+</head>
+<body>
+<svg id="castle" aria-hidden="true" preserveAspectRatio="xMidYMid slice"></svg>
+<div class="veil" aria-hidden="true"></div>
+
+<nav aria-label="Main">
+  <div class="wrap">
+    <!-- EDIT: your initials or first name -->
+    <a class="logo" href="#top">🏯 PB</a>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <div class="floor" aria-hidden="true"><span id="fl">Floor 1</span><div class="track"><div class="fill" id="fill"></div></div></div>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="kanji" aria-hidden="true">無限城</div>
+  <div class="wrap">
+    <!-- Japanese (katakana) version of your name. Check the spelling with a Japanese speaker if you can. -->
+    <div class="jp" lang="ja">プラティク・ベルワニ</div>
+    <div class="tag">Welcome to my Infinity Castle</div>
+    <h1>Pratik Bherwani</h1>
+    <!-- EDIT: your tagline -->
+    <p>Part-time data detective, full-time sports enthusiast, professional napper, and unofficial explorer of places I didn’t plan to visit.</p>
+    <div class="btns">
+      <a class="btn" href="#projects">Enter the castle</a>
+      <a class="btn alt" href="#about">Read my file</a>
+    </div>
+  </div>
+</header>
+<div class="checker" aria-hidden="true"></div>
+
+<main>
+<!-- ================= ABOUT ================= -->
+<section id="about">
+  <div class="wrap">
+    <h2>Corps file</h2>
+    <div class="sheet">
+      <div class="panel about-text">
+        <!-- EDIT: your About text -->
+        <p>Hi, I’m Pratik Bherwani. I’m a third-year MBA Tech (Data Science) student, and I’m into quantitative finance and doing as much bakchodi as possible.</p>
+        <p>Outside class, you’ll probably find me playing padel, gaming, or binge-watching shows until the next episode becomes the next season.</p>
+        <p>What I care about:</p>
+        <ul class="cares">
+          <li>Barça winning games because my mental health has suffered enough.</li>
+          <li>Getting enough sleep, which college seems personally committed to preventing.</li>
+        </ul>
+      </div>
+      <aside class="panel char" aria-label="Quick facts">
+        <!-- EDIT: put a photo at images/me.jpg (square works best), or delete this img line -->
+        <img src="images/me.jpg" alt="Pratik Bherwani lying on a rocky hilltop under a cloudy blue sky" style="object-position:55% 55%">
+        <dl>
+          <!-- EDIT: change the facts, add or remove rows -->
+          <dt>Course</dt><dd>MBA Tech (DS)</dd>
+          <dt>Year</dt><dd>3rd year</dd>
+          <dt>Home base</dt><dd>Mumbai, India</dd>
+          <dt>Favourite sport</dt><dd>Padel</dd>
+          <dt>Fuel</dt><dd>Red Bull, Diet Coke, vodka</dd>
+        </dl>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- ================= PROJECTS ================= -->
+<section id="projects">
+  <div class="wrap">
+    <h2>Missions</h2>
+    <p class="lead">Things I’ve built, made or written. Each one is a hunt I finished or am still on.</p>
+    <div class="missions">
+      <!-- EDIT: one <article> per project. Copy and paste a block to add more. -->
+      <article class="panel mission">
+        <div class="row"><h3>Customer Segmentation &amp; Revenue Analysis</h3><span class="status">Cleared</span></div>
+        <ul class="stack" aria-label="Tech stack">
+          <li>Python</li><li>Pandas</li><li>Scikit-learn</li><li>Streamlit</li><li>Plotly</li><li>K-Means</li>
+        </ul>
+        <p>Built an interactive analytics application using RFM analysis and K-Means clustering to segment customers based on purchasing behaviour. Developed interactive dashboards to explore revenue trends and customer segments using date, country, and customer-type filters.</p>
+        <div class="row">
+          <!-- EDIT: add <a href="your-github-link">View the code</a> here when you have a link -->
+          <span class="reward">+500 pts</span>
+        </div>
+      </article>
+
+      <article class="panel mission">
+        <div class="row"><h3>AI-Assisted Document Compliance Comparison Tool</h3><span class="status">Cleared</span></div>
+        <ul class="stack" aria-label="Tech stack">
+          <li>Python</li><li>AI</li><li>Document Parsing</li>
+        </ul>
+        <p>Developed an AI-assisted tool to compare supplier documents against approved formats, identify missing information and compliance gaps, and generate structured compliance reports. Improved comparison accuracy through testing and refinement of compliance-scoring logic.</p>
+        <div class="row">
+          <!-- EDIT: add a link here if you have one -->
+          <span class="reward">+500 pts</span>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ================= SKILLS ================= -->
+<section id="skills">
+  <div class="wrap">
+    <h2>Breathing forms</h2>
+    <p class="lead">My skills, rated honestly out of 10.</p>
+    <div class="panel forms" id="forms"><!-- filled from the skills list in the script at the bottom --></div>
+
+    <h2 style="margin-top:56px">Gear</h2>
+    <p class="lead">Interests I carry everywhere.</p>
+    <ul class="inv">
+      <!-- EDIT: your interests, with an emoji each -->
+      <li><span>🎧</span>[Music]</li>
+      <li><span>🎮</span>[Games]</li>
+      <li><span>📖</span>[Manga or books]</li>
+      <li><span>✏️</span>[Another interest]</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ================= CONTACT ================= -->
+<section id="contact" class="contact">
+  <div class="wrap">
+    <div class="panel">
+      <h2>Send a crow</h2>
+      <p class="lead">Want to work together, swap anime recs or just say hi? My messenger crow is ready.</p>
+      <ul class="links">
+        <!-- EDIT: use an email and/or social links. No phone number or home address. -->
+        <li><a class="btn" href="mailto:pratikbherwani@gmail.com">pratikbherwani@gmail.com</a></li>
+        <li><a class="btn alt" href="https://github.com/your-username" target="_blank" rel="noopener">GitHub</a></li>
+        <li><a class="btn alt" href="https://www.linkedin.com/in/your-username" target="_blank" rel="noopener">LinkedIn</a></li>
+      </ul>
+    </div>
+  </div>
+</section>
+</main>
+
+<div class="checker" aria-hidden="true"></div>
+<footer>
+  © <span id="year">2026</span> Pratik Bherwani · <a href="mailto:pratikbherwani@gmail.com">pratikbherwani@gmail.com</a>. Built by hand with HTML, CSS and JavaScript. Unofficial fan tribute to Demon Slayer. Credits are in the <a href="https://github.com/your-username/your-repo#credits">README</a>.
+</footer>
+
+<div id="toast" role="status" aria-live="polite"></div>
+
+<script>
+/* ===== EDIT THIS LIST: your skills. level is 1 to 10 ===== */
+const skills = [
+  { name: "Skill one",   level: 8, text: "One line on what you can do with it." },
+  { name: "Skill two",   level: 7, text: "One line on what you can do with it." },
+  { name: "Skill three", level: 6, text: "One line on what you can do with it." },
+  { name: "Skill four",  level: 5, text: "One line on what you can do with it." },
+  { name: "Skill five",  level: 4, text: "One line on what you can do with it." }
+];
+const formsBox = document.getElementById("forms");
+skills.forEach(s => {
+  const d = document.createElement("div");
+  d.className = "form";
+  const label = document.createElement("label");
+  label.textContent = s.name + "  " + s.level + "/10";
+  const bar = document.createElement("div");
+  bar.className = "bar";
+  bar.setAttribute("role", "img");
+  bar.setAttribute("aria-label", s.name + " level " + s.level + " out of 10");
+  for (let i = 1; i <= 10; i++) { const c = document.createElement("i"); if (i <= s.level) c.className = "on"; bar.appendChild(c); }
+  const small = document.createElement("small");
+  small.textContent = s.text;
+  d.append(label, bar, small);
+  formsBox.appendChild(d);
+});
+
+/* ===== Infinity Castle background, drawn in code =====
+   A long corridor of shoji rooms that turns as you scroll, with floating rooms,
+   stairs, bridges, pillars and lanterns around it, like the castle rearranging itself. */
+const NS = "http://www.w3.org/2000/svg";
+const castle = document.getElementById("castle");
+castle.setAttribute("viewBox", "0 0 1200 800");
+let seed = 11;
+const rnd = () => (seed = (seed * 16807) % 2147483647) / 2147483647;
+function el(tag, attrs, parent) {
+  const n = document.createElementNS(NS, tag);
+  for (const k in attrs) n.setAttribute(k, attrs[k]);
+  parent.appendChild(n); return n;
+}
+const lerp = (a, b, t) => [a[0] + (b[0] - a[0]) * t, a[1] + (b[1] - a[1]) * t];
+const pts = a => a.map(p => p[0].toFixed(1) + "," + p[1].toFixed(1)).join(" ");
+const poly = (g, a, fill, stroke, op) => el("polygon", { points: pts(a), fill: fill, stroke: stroke || "none", "stroke-width": 2, opacity: op == null ? 1 : op }, g);
+const line = (g, a, b, color, w, op) => el("line", { x1: a[0], y1: a[1], x2: b[0], y2: b[1], stroke: color, "stroke-width": w, opacity: op == null ? 1 : op }, g);
+
+const defs = el("defs", {}, castle);
+const glow = el("radialGradient", { id: "glow" }, defs);
+[["0", "#ffd27a", .9], ["0.35", "#f2a541", .4], ["1", "#b3202a", 0]].forEach(s => el("stop", { offset: s[0], "stop-color": s[1], "stop-opacity": s[2] }, glow));
+const depth = el("radialGradient", { id: "depth", cx: "50%", cy: "50%", r: "70%" }, defs);
+[["0", "#3a1c20"], ["1", "#0d0a14"]].forEach(s => el("stop", { offset: s[0], "stop-color": s[1] }, depth));
+el("rect", { x: 0, y: 0, width: 1200, height: 800, fill: "url(#depth)" }, castle);
+
+/* the endless corridor: nested frames shrinking toward a vanishing point */
+const CX = 600, CY = 400, F = .66, N = 9;
+const tunnel = el("g", {}, castle);
+const fr = i => { const k = Math.pow(F, i); return { L: CX - 1000 * k, R: CX + 1000 * k, T: CY - 800 * k, B: CY + 800 * k, k: k }; };
+function wall(g, a, b, c, d, lit) {            // a top-outer, b top-inner, c bottom-inner, d bottom-outer
+  poly(g, [a, b, c, d], "#2a1a14", "#0d0a14");
+  const cen = [(a[0] + b[0] + c[0] + d[0]) / 4, (a[1] + b[1] + c[1] + d[1]) / 4];
+  const sh = p => [cen[0] + (p[0] - cen[0]) * .78, cen[1] + (p[1] - cen[1]) * .78];
+  const q = [a, b, c, d].map(sh);
+  poly(g, q, lit ? "#f2a541" : "#6b5a49", "#0d0a14", lit ? .7 : .55);
+  [1 / 3, 2 / 3].forEach(t => line(g, lerp(q[0], q[1], t), lerp(q[3], q[2], t), "#1a1216", 2, .8));
+  line(g, lerp(q[0], q[3], .5), lerp(q[1], q[2], .5), "#1a1216", 2, .8);
+}
+for (let i = N - 1; i >= 0; i--) {
+  const o = fr(i), n = fr(i + 1), g = el("g", {}, tunnel);
+  const oTL = [o.L, o.T], oTR = [o.R, o.T], oBL = [o.L, o.B], oBR = [o.R, o.B];
+  const nTL = [n.L, n.T], nTR = [n.R, n.T], nBL = [n.L, n.B], nBR = [n.R, n.B];
+  poly(g, [oBL, oBR, nBR, nBL], i % 2 ? "#34321e" : "#3d3a22", "#0d0a14");                 // tatami floor
+  [.25, .5, .75].forEach(t => line(g, lerp(oBL, oBR, t), lerp(nBL, nBR, t), "#16130c", 2, .8));
+  poly(g, [oTL, oTR, nTR, nTL], "#1a1216", "#0d0a14");                                      // ceiling
+  line(g, lerp(oTL, oTR, .5), lerp(nTL, nTR, .5), "#4a1c1c", Math.max(2, 10 * o.k), .9);    // beam
+  wall(g, oTL, nTL, nBL, oBL, rnd() > .5);
+  wall(g, oTR, nTR, nBR, oBR, rnd() > .5);
+  if (i % 2 === 0) el("circle", { cx: CX, cy: n.T + (n.B - n.T) * .18, r: (n.B - n.T) * .16, fill: "url(#glow)" }, g);   // hanging lantern
+}
+el("circle", { cx: CX, cy: CY, r: 90, fill: "url(#glow)", opacity: .7 }, tunnel);
+
+/* floating pieces around the corridor */
+function room(parent, w, h, lit) {
+  const g = el("g", {}, parent);
+  el("rect", { x: -w / 2, y: -h / 2, width: w, height: h, fill: "#2a1a14", stroke: "#0d0a14", "stroke-width": 3 }, g);
+  const cols = Math.max(2, Math.round(w / 46));
+  for (let i = 0; i < cols; i++) {
+    const pw = (w - 16) / cols;
+    el("rect", { x: -w / 2 + 8 + i * pw + 2, y: -h / 2 + 10, width: pw - 4, height: h - 20, fill: lit && rnd() > .45 ? "#f2a541" : "#6b5a49", opacity: lit ? .75 : .45 }, g);
+  }
+  el("line", { x1: -w / 2, x2: w / 2, y1: 0, y2: 0, stroke: "#0d0a14", "stroke-width": 3, opacity: .7 }, g);
+  el("path", { d: "M" + (-w / 2 - 22) + "," + (-h / 2) + " Q" + (-w / 4) + "," + (-h / 2 - 8) + " 0," + (-h / 2 - 34) + " Q" + (w / 4) + "," + (-h / 2 - 8) + " " + (w / 2 + 22) + "," + (-h / 2) + " Z", fill: "#1a1216", stroke: "#0d0a14", "stroke-width": 2 }, g);
+  return g;
+}
+function stairs(parent, w) {
+  const g = el("g", {}, parent);
+  for (let i = 0; i < 9; i++) el("rect", { x: i * (w / 9), y: -i * 12, width: w / 9 + 1, height: 12 + i * 12, fill: "#3a261c", stroke: "#0d0a14", "stroke-width": 2 }, g);
+  return g;
+}
+function pillar(parent, h) {
+  const g = el("g", {}, parent);
+  el("rect", { x: -10, y: -h / 2, width: 20, height: h, fill: "#2a1a14", stroke: "#0d0a14", "stroke-width": 2 }, g);
+  el("rect", { x: -10, y: -h / 2 + h * .12, width: 20, height: h * .07, fill: "#b3202a" }, g);
+  el("rect", { x: -10, y: h / 2 - h * .19, width: 20, height: h * .07, fill: "#b3202a" }, g);
+  return g;
+}
+function bridge(parent, w) {
+  const g = el("g", {}, parent);
+  el("rect", { x: -w / 2, y: -5, width: w, height: 10, fill: "#3a261c", stroke: "#0d0a14", "stroke-width": 2 }, g);
+  for (let i = 0; i <= 6; i++) el("rect", { x: -w / 2 + i * (w / 6) - 3, y: -26, width: 6, height: 21, fill: "#2a1a14" }, g);
+  el("line", { x1: -w / 2, x2: w / 2, y1: -26, y2: -26, stroke: "#b3202a", "stroke-width": 3 }, g);
+  return g;
+}
+function lantern(parent, r) {
+  const g = el("g", {}, parent);
+  el("circle", { r: r * 3, fill: "url(#glow)" }, g);
+  el("rect", { x: -r * .6, y: -r, width: r * 1.2, height: r * 2, rx: r * .4, fill: "#b3202a", stroke: "#0d0a14", "stroke-width": 2 }, g);
+  return g;
+}
+const layers = [];
+[{ n: 7, s: .55, o: .45, k: .04 }, { n: 6, s: .85, o: .7, k: .09 }, { n: 4, s: 1.25, o: .9, k: .16 }].forEach(L => {
+  const lg = el("g", { opacity: L.o }, castle), items = [];
+  for (let i = 0; i < L.n; i++) {
+    const x = rnd() < .5 ? 40 + rnd() * 300 : 860 + rnd() * 300, y = 40 + rnd() * 720;   // keep the corridor clear
+    const holder = el("g", {}, lg), kind = rnd();
+    if (kind < .4) room(holder, (90 + rnd() * 120) * L.s, (60 + rnd() * 50) * L.s, rnd() > .35);
+    else if (kind < .55) stairs(holder, 150 * L.s);
+    else if (kind < .7) pillar(holder, (160 + rnd() * 120) * L.s);
+    else if (kind < .85) bridge(holder, (220 + rnd() * 120) * L.s);
+    else lantern(holder, 12 * L.s);
+    holder.dataset.x = x; holder.dataset.y = y;
+    holder.dataset.r = Math.round(rnd() * 4) * 90 + (rnd() - .5) * 24;       // rooms sit on floors, walls and ceilings
+    items.push(holder);
+  }
+  layers.push({ items: items, k: L.k });
+});
+function place(p) {
+  tunnel.setAttribute("transform", "rotate(" + (p * 90) + " " + CX + " " + CY + ")");
+  layers.forEach((L, li) => L.items.forEach((h, i) => {
+    const r = +h.dataset.r + p * (li + 1) * 30 * (i % 2 ? 1 : -1);
+    const y = +h.dataset.y - p * 700 * L.k * 3;
+    h.setAttribute("transform", "translate(" + h.dataset.x + "," + y + ") rotate(" + r + ")");
+  }));
+}
+
+/* floor counter: scroll fills the bar and moves you down a floor at each section */
+const fill = document.getElementById("fill"), fl = document.getElementById("fl"), toast = document.getElementById("toast");
+const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+let floor = 1, toastTimer;
+function showToast(html) {
+  toast.innerHTML = html; toast.classList.add("show");
+  clearTimeout(toastTimer); toastTimer = setTimeout(() => toast.classList.remove("show"), 3200);
+}
+const marks = [
+  { id: "about",    f: 2, msg: "The castle shifts. You reach the Corps file." },
+  { id: "projects", f: 3, msg: "Missions found." },
+  { id: "skills",   f: 4, msg: "Breathing forms unlocked." },
+  { id: "contact",  f: 5, msg: "Final chamber. Send a crow!" }
+];
+let ticking = false;
+function onScroll() {
+  const max = document.documentElement.scrollHeight - innerHeight;
+  const p = max > 0 ? Math.min(1, scrollY / max) : 0;
+  fill.style.width = (p * 100) + "%";
+  if (!reduce) place(p);
+  let now = 1;
+  marks.forEach(m => { if (document.getElementById(m.id).getBoundingClientRect().top < innerHeight * 0.5) now = m.f; });
+  if (now > floor) showToast("<b>Floor " + now + ".</b> " + marks.find(x => x.f === now).msg);
+  floor = now; fl.textContent = "Floor " + floor;
+  ticking = false;
+}
+addEventListener("scroll", () => { if (!ticking) { ticking = true; requestAnimationFrame(onScroll); } }, { passive: true });
+place(0); onScroll();
+
+document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
