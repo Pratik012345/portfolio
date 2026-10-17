@@ -2,7 +2,7 @@
 
 A Demon Slayer (Infinity Castle) themed portfolio built with plain HTML, CSS and JavaScript.
 
-Live site: https://YOUR-VERCEL-LINK.vercel.app
+Live site: https://pratik-bherwani-portfolio.vercel.app
 
 ## Credits
 - Fonts: Shippori Mincho and Noto Sans from Google Fonts (SIL Open Font License)
